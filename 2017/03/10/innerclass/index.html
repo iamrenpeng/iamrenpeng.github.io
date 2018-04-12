@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | the better day</title>
+  <title>java内部类 | the better day</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="the better day">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="[TOC] 定义：定义在一个类内部的类，其中的方法可以访问外部类的域 使用原因：1、内部类可以访问该类定义的所在作用域的数据，包括私有数据2、内部类可以对同一个包中的其他类隐藏3、当想要定义一个回调函数且不想写大量的代码时，使用匿名内部类比较便捷 分类： 成员内部类    定义：在外部类的内部，而且与成员方法和属性平级的类 （1）成员内部类不能存在static关键字，即不能声明静态属性、静态方法、">
+<meta name="keywords" content="java,内部类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java内部类">
+<meta property="og:url" content="http://yoursite.com/2017/03/10/innerclass/index.html">
 <meta property="og:site_name" content="the better day">
+<meta property="og:description" content="[TOC] 定义：定义在一个类内部的类，其中的方法可以访问外部类的域 使用原因：1、内部类可以访问该类定义的所在作用域的数据，包括私有数据2、内部类可以对同一个包中的其他类隐藏3、当想要定义一个回调函数且不想写大量的代码时，使用匿名内部类比较便捷 分类： 成员内部类    定义：在外部类的内部，而且与成员方法和属性平级的类 （1）成员内部类不能存在static关键字，即不能声明静态属性、静态方法、">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-12T03:05:55.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="the better day">
+<meta name="twitter:title" content="java内部类">
+<meta name="twitter:description" content="[TOC] 定义：定义在一个类内部的类，其中的方法可以访问外部类的域 使用原因：1、内部类可以访问该类定义的所在作用域的数据，包括私有数据2、内部类可以对同一个包中的其他类隐藏3、当想要定义一个回调函数且不想写大量的代码时，使用匿名内部类比较便捷 分类： 成员内部类    定义：在外部类的内部，而且与成员方法和属性平级的类 （1）成员内部类不能存在static关键字，即不能声明静态属性、静态方法、">
   
     <link rel="alternative" href="/atom.xml" title="the better day" type="application/atom+xml">
   
@@ -148,49 +153,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-innerclass" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/10/hello/" class="archive-article-date">
-  	<time datetime="2018-04-10T15:29:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/10/hello/">hello</a>
+    <h1 class="article-title" itemprop="name">
+      java内部类
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2017/03/10/innerclass/" class="archive-article-date">
+  	<time datetime="2017-03-10T12:29:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><p>定义在一个类内部的类，其中的方法可以访问外部类的域</p>
+<h2 id="使用原因："><a href="#使用原因：" class="headerlink" title="使用原因："></a>使用原因：</h2><p>1、内部类可以访问该类定义的所在作用域的数据，包括私有数据<br>2、内部类可以对同一个包中的其他类隐藏<br>3、当想要定义一个回调函数且不想写大量的代码时，使用匿名内部类比较便捷</p>
+<h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><ol>
+<li><p>成员内部类</p>
+<p>   定义：在外部类的内部，而且与成员方法和属性平级的类</p>
+<p>（1）成员内部类不能存在static关键字，即不能声明静态属性、静态方法、静态代码块</p>
+<p>（2）成员内部类的实例化 外部类.内部类 变量名=外部类的实例.new 内部类（）</p>
+<p>（3）内部类使用外部类的方法和属性 外部类.this.方法/属性</p>
+<p>（4）外部类无法访问内部类的方法和属性，需要实例化一个内部类对象才能访问</p>
+<p> （5）单独的class文件，外部类$内部类.class</p>
+</li>
+<li><p>静态内部类</p>
+<p>  定义：使用static修饰的内部类叫作静态内部类，在内部类不需要使用外部类的时候可以使用静态内部类</p>
+<p>（1）静态内部类可以定义静态成员（静态变量、静态方法）和实例成员</p>
+<p>（2）静态内部类只能访问外部类的静态成员 外部类.静态成员</p>
+<p>（3）外部类的作用域外使用内部类 外部类.内部类 变量名=new 外部类.内部类（）</p>
+<p>（4） 单独的class文件，外部类$内部类.class</p>
+</li>
+<li><p>局部内部类</p>
+<p>  定义：在代码块、方法内、作用域（使用花括号“{}”括起来的一段代码）内的类叫局部内部类。</p>
+<p>（1）局部内部类只能在代码代码块、方法体内和作用域中使用（如创建对象和使用类对象等）</p>
+<p>（2）局部内部类访问作用域内的局部变量，该局部变量需要使用final修饰。</p>
+<p>（3）可以使用abstract修饰，声明为抽象类。</p>
+</li>
+<li><p>匿名内部类</p>
+<p>定义：局部内部类升级，只创建一个局部内部类的实例，且不用命名就是匿名内部类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">匿名内部类定义和实例化形式如下： </span><br><span class="line">new 父类/接口构造方法（参数）&#123; </span><br><span class="line">     //注：该方法名必须在父类/接口中已经存在 </span><br><span class="line">     修饰符 返回参数类型 方法名（参数列表）&#123; </span><br><span class="line">           。。。</span><br><span class="line">     &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意这是一个实例</p>
+<p>（1）单独的class文件，使用类$数字.class</p>
+</li>
+</ol>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">内部类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术人生//" class="article-tag-list-link color5">技术人生</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/03/10/innerclass/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/04/10/hello/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          hello
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -213,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
